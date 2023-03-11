@@ -9,6 +9,6 @@
 	//"workspaceFolder": "/",
 	"extensions": [
 		"ms-python.python"
-	],
+	]
 	//"shutdownAction": "stopCompose"
 }
