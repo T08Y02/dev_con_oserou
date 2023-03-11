@@ -6,7 +6,6 @@
 	"dockerComposeFile": ["docker-compose.yml"], 
 	// リモート先のVS Codeにインストールする拡張機能
 	"workspaceFolder": "/workspace/oserou_django",
-	//"service": "app",
 	"extensions": [
 		"ms-python.python"
 	],
