@@ -1,9 +1,13 @@
 {
-	"name": "Python Sample",
+	"name": "oserou",
 	// Dockerfileでイメージ・コンテナを作成
 	"dockerFile": "Dockerfile",
+	//"dockerComposeFile": "docker-compose.yml", 
 	// リモート先のVS Codeにインストールする拡張機能
+	"workspaceFolder": "/oserou",
+	//"service": "app",
 	"extensions": [
 		"ms-python.python"
 	],
+	//"shutdownAction": "stopCompose"
 }
