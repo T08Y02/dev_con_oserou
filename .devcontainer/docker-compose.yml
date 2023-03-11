@@ -1,8 +1,10 @@
-version: "3"
+version: '3'
 
 services:
   web:
-    build: ./.devcontainer/Dockerfile
+    build: 
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
     tty: true
     volumes:
       - ../:/workspace
@@ -11,6 +13,7 @@ services:
 
   db:
     image: mysql:5.7
+    platform: linux/amd64
     volumes:
       - mysql_data:/var/lib/mysql
     environment:

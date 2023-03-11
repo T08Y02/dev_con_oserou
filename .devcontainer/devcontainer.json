@@ -1,10 +1,11 @@
 {
 	"name": "oserou",
 	// Dockerfileでイメージ・コンテナを作成
-	"dockerFile": "Dockerfile",
-	//"dockerComposeFile": ["docker-compose.yml"], 
+	//"dockerFile": "Dockerfile",
+	"service": "web",
+	"dockerComposeFile": ["docker-compose.yml"], 
 	// リモート先のVS Codeにインストールする拡張機能
-	"workspaceFolder": "/workspaces/oserou",
+	"workspaceFolder": "/workspace/oserou_django",
 	//"service": "app",
 	"extensions": [
 		"ms-python.python"
