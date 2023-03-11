@@ -1,33 +1,31 @@
-version: '3'
-services:
-  services:
-  db:
-    image: mysql:latest
-    restart: always
-    volumes:
-      - data-volume:/var/lib/mysql
-    ports:
-    - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: levtech2023
-      MYSQL_DATABASE: guest-house
-      MYSQL_USER: dbuser
-      MYSQL_PASSWORD: levtech2023
-      TZ: 'Asia/Tokyo'
+version: "3"
 
-  django:
-    build: .
+services:
+  web:
+    build: ./.devcontainer/Dockerfile
     tty: true
     volumes:
-      - ./oserou_django
-    ports:
-      - "8000:8000"
-    expose:
-      - 8000
+      - ../:/workspace
     depends_on:
       - db
 
-volumes:
-  data-volume:
+  db:
+    image: mysql:5.7
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: django_sample
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
 
-    
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8080:80
+    environment:
+      - PMA_HOST=db
+      - PMA_USER=root
+      - PMA_PASSWORD=password
+
+volumes:
+    mysql_data:
