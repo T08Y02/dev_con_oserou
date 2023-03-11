@@ -5,6 +5,5 @@ RUN apt-get update && \
 RUN apt-get install -y mariadb-client
 RUN mkdir /oserou
 WORKDIR /oserou
-ADD .devcontainer/requirements.txt /oserou/
+ADD ./oserou/requirements.txt /oserou/
 RUN pip install -r requirements.txt
-ADD . /oserou/
