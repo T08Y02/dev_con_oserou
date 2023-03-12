@@ -17,10 +17,10 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: 0ser0u
       MYSQL_DATABASE: oserou
       TZ: 'Asia/Tokyo'
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb_use_native_aio=0
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -29,7 +29,7 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_USER=root
-      - PMA_PASSWORD=password
+      - PMA_PASSWORD=0ser0u
 
 volumes:
     mysql_data:
