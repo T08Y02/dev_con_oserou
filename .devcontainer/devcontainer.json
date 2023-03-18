@@ -6,7 +6,6 @@
 	"dockerComposeFile": ["../docker-compose.yml"], 
 	// リモート先のVS Codeにインストールする拡張機能
 	"workspaceFolder": "/workspace",
-	//"workspaceFolder": "/",
 	"extensions": [
 		"ms-python.python"
 	]
