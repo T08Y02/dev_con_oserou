@@ -6,6 +6,8 @@ services:
       context: ..
       dockerfile: ./oserou/Dockerfile
     tty: true
+    ports:
+      - "8000:8000"
     volumes:
       - ./:/workspace
     depends_on:
