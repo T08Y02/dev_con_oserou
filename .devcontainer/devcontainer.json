@@ -1,5 +1,5 @@
 {
-	"name": "oserou",
+	"name": "stablediffusion",
 	// Dockerfileでイメージ・コンテナを作成
 	//"dockerFile": "Dockerfile",
 	"service": "web",

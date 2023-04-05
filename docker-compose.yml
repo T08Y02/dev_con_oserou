@@ -4,36 +4,10 @@ services:
   web:
     build: 
       context: ..
-      dockerfile: ./oserou/Dockerfile
+      dockerfile: ./stdf/Dockerfile
     tty: true
     ports:
       - "8000:8000"
     volumes:
       - ./:/workspace
-    depends_on:
-      - db
 
-  db:
-    image: mysql:5.7
-    platform: linux/amd64
-    volumes:
-      - mysql_data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: 0ser0u
-      MYSQL_DATABASE: oserou
-      MYSQL_USER: dbuser
-      MYSQL_PASSWORD: 0ser0uda2e
-      TZ: 'Asia/Tokyo'
-    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_bin --innodb_use_native_aio=0
-
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 8080:80
-    environment:
-      - PMA_HOST=db
-      - PMA_USER=dbuser
-      - PMA_PASSWORD=0ser0uda2e
-
-volumes:
-    mysql_data:
